@@ -86,15 +86,15 @@ package com.example.kotlin_example
 //    MyClass.some()    // 에러
 //}
 
-class Myclass{
-    companion object{
-        var data = 10
-        fun some(){
-            println(data)
-        }
-    }
-}
-fun main(){
-    Myclass.data = 20 // 성공
-    Myclass.some()    // 성공
-}
+//class Myclass{
+//    companion object{
+//        var data = 10
+//        fun some(){
+//            println(data)
+//        }
+//    }
+//}
+//fun main(){
+//    Myclass.data = 20 // 성공
+//    Myclass.some()    // 성공
+//}
