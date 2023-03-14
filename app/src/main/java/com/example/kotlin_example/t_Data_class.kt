@@ -1,9 +1,9 @@
 package com.example.kotlin_example
 
 // 데이터 클래스
-// 데이터를 객체로 묶어준다.
+// equals
 
-//class nonDataClass (val name : String, val email : String, val age : Int) // 일반 클래스
+//class NonDataClass (val name : String, val email : String, val age : Int) // 일반 클래스
 //
 //data class DataClass (val name : String, val email : String, val age: Int) // 데이터 클래스
 //
@@ -20,3 +20,81 @@ package com.example.kotlin_example
 //}
 
 // ------------------------------------------------------------------------------
+// toString
+//
+//fun main(){
+//    class NonDataClass (val name : String, val email : String, val age : Int)
+//    data class DataClass (val name : String, val email : String, val age: Int)
+//
+//    val non = NonDataClass("seokho" , "rkwhr3256@naver.com", 27)
+//    val data = DataClass("seokho" , "rkwhr3256@naver.com", 27)
+//
+//    println("non data class ${non.toString()}") // 큰 의미가 없다 주소 나오는거 같다.
+//    println("data class ${data.toString()}")    // 객체가 포함하는 멤버 변수의 데이터가 출력 된다.
+//    // toString 역시 주 생성자의 매개변수만 체크한다.
+//}
+
+// ------------------------------------------------------------------------------
+// object
+
+//val obj = object { // 이런 선언 자체가 에러
+//    var data = 10
+//    fun some(){
+//        println("data $data")
+//    }
+//}
+//
+//fun main(){
+//    obj.data = 20 // 에러
+//    obj.some()    // 에러
+//}
+
+//open class Super(){
+//    open var data = 10
+//    open fun some(){
+//        println("data is $data")
+//    }
+//}
+//
+//val obj = object : Super(){
+//    override var data = 20
+//    override fun some() {
+//        println("reData is $data")
+//    }
+//}
+//
+//fun main(){
+//    obj.data = 30
+//    obj.some()
+//}
+
+// ------------------------------------------------------------------------------
+// companion
+// 내가 선호하는 방식은 아니지만 클래스 이름 자체를 가지고 멤버에 접근하려면 사용하느 키워드이다 (자바 static을 대체)s
+//class MyClass {
+//    var data = 10
+//    fun some(){
+//        println(data)
+//    }
+//}
+//
+//fun main(){
+//    val obj = MyClass()
+//    obj.data = 20
+//    obj.some()
+//    MyClass.data = 20 // 에러
+//    MyClass.some()    // 에러
+//}
+
+class Myclass{
+    companion object{
+        var data = 10
+        fun some(){
+            println(data)
+        }
+    }
+}
+fun main(){
+    Myclass.data = 20 // 성공
+    Myclass.some()    // 성공
+}
